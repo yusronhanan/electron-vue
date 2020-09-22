@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import auth from '../middleware/auth.js'
-
 Vue.use(VueRouter)
 
 const routes = [

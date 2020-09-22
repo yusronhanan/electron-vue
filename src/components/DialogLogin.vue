@@ -11,10 +11,10 @@
               
               
               <v-col cols="12">
-                <v-text-field label="Email*" v-model="email" required></v-text-field>
+                <v-text-field label="Email*" v-model="account.email" required></v-text-field>
               </v-col>
               <v-col cols="12">
-                <v-text-field label="Password*" type="password" v-model="password" required></v-text-field>
+                <v-text-field label="Password*" type="password" v-model="account.password" required></v-text-field>
               </v-col>
               
              
@@ -24,7 +24,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="login">Login</v-btn>
+          <v-btn color="blue darken-1" text @click="login(account)">Login</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -43,8 +43,10 @@ import { mapActions } from "vuex"
     
     },
     data: () =>({
-        email: '',
-        password:''
+        account:{
+          email:'',
+          password:''
+        }
 }),
     computed:{
         ...mapGetters({
@@ -52,9 +54,10 @@ import { mapActions } from "vuex"
         })
     },
     methods:{
+      
         ...mapActions({
                 login : "login"
-            })
+            }),
     }
     
     }

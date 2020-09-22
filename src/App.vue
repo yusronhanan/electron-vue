@@ -59,12 +59,13 @@ export default {
   },
 
   data: () => ({
-    //
+    items:[]
   }),
   methods: {
     ...mapActions({
       signout:"sign_out"
     })
+    
   }
 };
 </script>
