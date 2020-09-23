@@ -50,6 +50,8 @@ import DialogLogin from "./components/DialogLogin";
 import MailList from "./components/MailList";
 
 import {mapActions} from "vuex";
+
+
 export default {
   name: 'App',
 

@@ -1,8 +1,14 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
-import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
-import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
+// import { app, protocol, BrowserWindow } from 'electron'
+const  { app, protocol, BrowserWindow } = require('electron')
+
+// import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
+const {createProtocol} = require('vue-cli-plugin-electron-builder/lib')
+
+// import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
+// const { default: installExtension, VUEJS_DEVTOOLS} = require('electron-devtools-installer');
+
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -64,11 +70,11 @@ app.on('activate', () => {
 app.on('ready', async () => {
   if (isDevelopment && !process.env.IS_TEST) {
     // Install Vue Devtools
-    try {
-      await installExtension(VUEJS_DEVTOOLS)
-    } catch (e) {
-      console.error('Vue Devtools failed to install:', e.toString())
-    }
+    // try {
+    //   await installExtension(VUEJS_DEVTOOLS)
+    // } catch (e) {
+    //   console.error('Vue Devtools failed to install:', e.toString())
+    // }
   }
   createWindow()
 })

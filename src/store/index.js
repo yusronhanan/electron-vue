@@ -35,7 +35,7 @@ export default new Vuex.Store({
       console.log('Store sign in')
 
       state.account = account
-      state.auth_login = true
+      
 
       
       axios.post('http://localhost:3000/loginmail', state.account).then(res => {
@@ -44,9 +44,7 @@ export default new Vuex.Store({
         // state.mailList.add(res.data)
         console.log(state.mailList)
       })
-
-    
-      
+        state.auth_login = true      
     },
     account_sign_out(state){
       console.log('Store sign out')
